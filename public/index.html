@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Create User</title>
 </head>
+
 <body>
     <form id="user-create-form" action="./api/user" method="post">
-        
-        <!-- Add user input fields here -->
+
+        Email: <input type="text" id="email">
+        <br> User name: <input type="text" id="username">
+        <br> Full Name: <input type="text" id="fullname">
+        <br> Date of Birth: <input type="text" id="dob">
+        <br>
+        <div id="error"></div>
+
+
+
 
         <button type="submit">Create User</button>
     </form>
 </body>
+
 </html>
