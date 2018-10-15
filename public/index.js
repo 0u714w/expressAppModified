@@ -26,28 +26,17 @@ function action(event) {
 
 }
 
+console.log(jsonUserObject)
+
 function postUser(userInfo) {
     // console.log('again user', userInfo)
     fetch(`./api/user`, {
-            method: 'POST',
-            body: userInfo,
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(res => res.json())
-        .then(data => {
-            console.log('Reached Server, Server Message:', data)
-            if (data.message === "Error, username Exists") {
-                document.getElementById("error").textContent = "Username Exists"
+        method: 'POST',
+        body: userInfo,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(res => res.json())
 
-            } else {
-
-                document.getElementById("error").textContent = "Username Works, Nice Pick!"
-
-
-            }
-        })
-
-    .catch(error => console.log('Error:', error))
 
 }
