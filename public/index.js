@@ -31,12 +31,25 @@ console.log(jsonUserObject)
 function postUser(userInfo) {
     // console.log('again user', userInfo)
     fetch(`./api/user`, {
-        method: 'POST',
-        body: userInfo,
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then(res => res.json())
+            method: 'POST',
+            body: userInfo,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json())
+        .then(data => {
+            console.log('Reached Server, Server Message:', data)
+            if (data.message === "Error, username Exists") {
+                alert("Denied")
 
+            } else {
+
+                alert("Success")
+
+
+            }
+        })
+
+    .catch(error => console.log('Error:', error))
 
 }

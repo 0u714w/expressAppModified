@@ -13,14 +13,10 @@ const users = []
 app.post("/api/user", function(req, res) {
 
     let userObject = req.body
-    console.log(userObject)
     checkUserName(userObject, res)
-    console.log(users)
-
 })
 
 function checkUserName(userObject, res) {
-    console.log("checkusername")
     for (let i = 0; i < users.length; i++) {
         if (users[i].userName === userObject.userName) {
             res.status(409)
