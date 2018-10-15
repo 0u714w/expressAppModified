@@ -1,13 +1,13 @@
 const userCreateForm = document.getElementById("user-create-form")
 const userCreateSubmitButton = userCreateForm.querySelector("button[type='submit']")
 
-userCreateSubmitButton.addEventListener("click", action)
+userCreateForm.addEventListener("submit", action)
 
 let userObject = {}
 
 function action(event) {
 
-    event.preventDefault()
+    event.preventDefault();
     const email = document.getElementById("email").value
     const userName = document.getElementById("username").value
     const fullName = document.getElementById("fullname").value
@@ -25,8 +25,6 @@ function action(event) {
     postUser(jsonUserObject)
 
 }
-
-console.log(jsonUserObject)
 
 function postUser(userInfo) {
     // console.log('again user', userInfo)
