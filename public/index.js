@@ -12,13 +12,41 @@ function action(event) {
     const userName = document.getElementById("username").value
     const fullName = document.getElementById("fullname").value
     const birthday = document.getElementById("dob").value
+    const mobileNumber = document.getElementById("mobile").value
+    const socialMedia = document.getElementById("url").value
+    const telephone = document.getElementById("telephone").checked
+    const email2 = document.getElementById("email2").checked
+    const mail = document.getElementById("mail").checked
+    const ios = document.getElementById("ios").checked
+    const android = document.getElementById("android").checked
+    const mac = document.getElementById("mac").checked
+    const windows = document.getElementById("windows").checked
+    const linux = document.getElementById("linux").checked
+    const admin = document.getElementById("admin").value
+    const mod = document.getElementById("mod").value
+    const user = document.getElementById("user").value
+    const datetime = document.getElementById("datetime").value
 
     userObject.email = email
     userObject.userName = userName
     userObject.fullName = fullName
     userObject.birthday = birthday
+    userObject.mobileNumber = mobileNumber
+    userObject.socialMedia = socialMedia
+    userObject.telephonePrefered = telephone
+    userObject.emailPrefered = email2
+    userObject.mailPrefered = mail
+    userObject.iosDevice = ios
+    userObject.androidDevice = android
+    userObject.macDevice = mac
+    userObject.windowsDevice = windows
+    userObject.linuxDevice = linux
+    userObject.administrator = admin
+    userObject.moderator = mod
+    userObject.user = user
+    userObject.datetime = datetime
 
-    console.log(userObject)
+
 
     const jsonUserObject = JSON.stringify(userObject)
 
@@ -38,7 +66,7 @@ function postUser(userInfo) {
         .then(data => {
             console.log('Reached Server, Server Message:', data)
             if (data.message === "Error, username Exists") {
-                alert("Denied")
+                alert("Denied: Username Exists")
 
             } else {
 
